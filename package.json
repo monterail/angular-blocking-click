@@ -1,0 +1,23 @@
+{
+  "name": "angular-blocking-click",
+  "version": "0.1.0",
+  "description": "In place \"request in progress\" indicator",
+  "main": "blocking_click.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monterail/angular-blocking-click.git"
+  },
+  "keywords": [
+    "angular",
+    "directive",
+    "xhr",
+    "ajax"
+  ],
+  "author": "Piotr Sokólski <p@pyetras.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "49a4b042dc15d8d559eee7ca77630fcab8e3c12c"
+}
