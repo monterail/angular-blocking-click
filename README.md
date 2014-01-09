@@ -34,3 +34,12 @@ angular.module('myApp', ['blockingClick']);
   <input type="submit" value="Save all changes" ng-click="save()" blocking-click>
 </form>
 ```
+
+## More
+```html
+<!-- blocking-click also supports text instead of an indicator -->
+<form>
+  ...
+  <input type="submit" value="Save all changes" ng-click="save()" blocking-click="Saving your data">
+</form>
+```
