@@ -1,21 +1,18 @@
 #In place "request in progress" indicator
-========================================
 
 Add an indicator to any element that starts an Ajax request when clicked. Will not work when long-polling is present!
 
 ## Demo
-==========
+
 ![angular-blocking-click Demo](http://monterail.github.io/angular-blocking-click/images/screencast.gif)
 
 ## Install
-==========
 
 ```
 bower install angular-blocking-click
 ```
 
 ## Usage
-========
 
 ```js
 angular.module('myApp', ['blockingClick']);
