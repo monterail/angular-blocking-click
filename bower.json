@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "blocking_click.js",
   "authors": [
-    "Piotr Sokólski <p@pyetras.com>",
+    "Piotr Sokólski <p@pyetras.com>"
   ],
   "repository": "git://github.com/monterail/angular-blocking-click.git",
   "dependencies": {
