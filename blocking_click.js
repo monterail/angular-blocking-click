@@ -1,13 +1,13 @@
 angular.module('blockingClick', [])
-  .provider('requestCounter', function($httpProvider){
+  .provider('requestCounter', ['$httpProvider', function($httpProvider){
     this.$get = ['$timeout', function($timeout){
       var activeRequests = 0, obj = { callbacks: [] };
-      
+
       $httpProvider.defaults.transformRequest.push(function(data){
         activeRequests++;
         return data;
       });
-      
+
       $httpProvider.defaults.transformResponse.push(function(data){
         activeRequests--;
 
@@ -26,11 +26,11 @@ angular.module('blockingClick', [])
 
       return obj;
     }];
-  })
-  .directive('blockingClick', function() {    
+  }])
+  .directive('blockingClick', function() {
     return {
       restrict: 'A',
-      controller: function($scope, $element, $attrs, requestCounter){
+      controller: ['$scope', '$element', '$attrs', 'requestCounter', function($scope, $element, $attrs, requestCounter){
         angular.element($element).on("click", function(){
           var spinner, isText = false;
           if (!angular.isUndefined($attrs.blockingClick) && angular.isString($attrs.blockingClick) && $attrs.blockingClick != "" && $attrs.blockingClick != "$spinner"){
@@ -46,7 +46,7 @@ angular.module('blockingClick', [])
           spinner.css('left', container.innerWidth()/2 - spinner.outerWidth()/2 + 'px');
           var disp = angular.element($element).css('display');
           angular.element($element).css('display','none');
-                    
+
           requestCounter.callbacks.push(function() {
             container.remove();
             angular.element($element).css('display', disp);
@@ -54,6 +54,6 @@ angular.module('blockingClick', [])
 
           return true;
         });
-      }
+      }]
     };
   });
