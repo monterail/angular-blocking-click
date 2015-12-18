@@ -30,8 +30,6 @@ angular.module('blockingClick', [])
   .directive('blockingClick', function() {
     return {
       restrict: 'A',
-      // Replacement of outerHeight JQuery function
-      // Credits to http://youmightnotneedjquery.com/
       controller: function($scope, $element, $attrs, requestCounter){
         var outerHeight = function(el){
           var height = el.offsetHeight;
@@ -40,8 +38,6 @@ angular.module('blockingClick', [])
           height += parseInt(style.marginTop) + parseInt(style.marginBottom);
           return height;
         };
-        // Replacement of outerWidth JQuery function
-        // Credits to http://youmightnotneedjquery.com/
         var outerWidth = function(el){
             var width = el.offsetWidth;
             var style = getComputedStyle(el);
